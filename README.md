@@ -1,16 +1,16 @@
-## Hi there 👋
+# 👋 Hi, I'm Aubin
 
-<!--
-**ElProfessorFRidg/elprofessorfridg** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🇫🇷 I'm French  
+🎓 Student  
+💻 Interested in programming, tech and AI
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## 📊 GitHub Stats
+![Stats](https://github-readme-stats.vercel.app/api?username=ElProfessorFRidg&show_icons=true&count_private=true&theme=tokyonight)
+
+## 💻 Top Languages
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ElProfessorFRidg&layout=compact&theme=tokyonight)
+
+## 🔥 Streak
+![GitHub Streak](https://streak-stats.demolab.com/?user=ElProfessorFRidg&theme=tokyonight)
