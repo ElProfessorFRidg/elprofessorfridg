@@ -10,3 +10,6 @@
 
 ## 🔥 Streak
 ![GitHub Streak](https://streak-stats.demolab.com/?user=ElProfessorFRidg&theme=tokyonight)
+
+## 🏆 Trophy
+[![trophy](https://github-profile-trophy.vercel.app/?username=ElProfessorFRidg)](https://github.com/ryo-ma/github-profile-trophy)
