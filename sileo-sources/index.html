@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sileo Sources</title>
+<style>
+:root{color-scheme:dark;--bg:#08090b;--card:#121419;--line:#242731;--text:#f5f7fa;--muted:#9da3ad;--accent:#7c5cff;--green:#35d07f}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -10%,#20203a 0,#08090b 42%);color:var(--text);font:16px -apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;min-height:100vh}
+main{max-width:720px;margin:auto;padding:48px 18px 40px}h1{font-size:38px;letter-spacing:-1.5px;margin:0 0 8px}p{color:var(--muted);line-height:1.5}.hero{margin-bottom:28px}.all{width:100%;border:0;border-radius:16px;padding:16px;font-size:17px;font-weight:700;background:var(--accent);color:#fff;margin:12px 0 28px}.group{margin:24px 0}.group h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 10px}.repo{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:8px 0}.info{min-width:0;flex:1}.name{font-weight:700}.url{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:3px}.add{border:0;border-radius:11px;padding:10px 13px;background:#fff;color:#111;font-weight:700;white-space:nowrap}.added{background:var(--green);color:#07130d}.note{font-size:13px;margin-top:28px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#0e1014}
+</style>
+</head>
+<body><main>
+<section class="hero"><h1>Sileo Sources</h1><p>Les meilleures sources jailbreak, regroupées au même endroit. Appuie sur <b>Ajouter</b> pour ouvrir directement Sileo sur la source.</p>
+<button class="all" onclick="addAll()">Ajouter toutes les sources</button></section>
+<div id="list"></div>
+<div class="note">⚠️ Ajoute uniquement les dépôts que tu connais. Certains paquets peuvent être incompatibles avec ta version d’iOS ou ton jailbreak.</div>
+</main>
+<script>
+const groups=[
+["🔥 Essentielles",[
+["Havoc","https://havoc.app/"],["Chariz","https://repo.chariz.com/"],["BigBoss","http://apt.thebigboss.org/repofiles/cydia/"],["SparkDev","https://sparkdev.me/"],["ElleKit","https://ellekit.space/"],["Procursus","https://apt.procurs.us/"],["PoomSmart","https://poomsmart.github.io/repo/"],["opa334","https://opa334.github.io/"],["Karen / Akemi","https://cydia.akemi.ai/"]
+]],
+["🛠️ Développeurs / Tweaks",[
+["Fouad Raheb","https://apt.fouadraheb.com/"],["Limneos","https://limneos.net/repo/"],["miro92","https://miro92.com/repo/"],["Twickd","https://repo.twickd.com/"]
+]]
+];
+function esc(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function link(u){return "sileo://source/"+u}
+function addOne(btn,u){location.href=link(u);btn.classList.add("added");btn.textContent="Ouvrir Sileo"}
+function addAll(){const urls=groups.flatMap(g=>g[1].map(x=>x[1]));navigator.clipboard?.writeText(urls.join("\n"));alert("Les URLs ont été copiées. Dans Sileo → Sources → +, colle-les : Sileo détecte plusieurs sources d’un coup.")}
+document.getElementById("list").innerHTML=groups.map(g=>'<section class="group"><h2>'+esc(g[0])+'</h2>'+g[1].map(x=>'<div class="repo"><div class="info"><div class="name">'+esc(x[0])+'</div><div class="url">'+esc(x[1])+'</div></div><button class="add" onclick="addOne(this,'+JSON.stringify(x[1])+')">Ajouter</button></div>').join("")+'</section>').join("");
+</script></body></html>
